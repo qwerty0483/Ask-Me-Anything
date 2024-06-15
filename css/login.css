@@ -16,7 +16,7 @@
 
     padding: 30px;
     width: 350px;
-    height: 380px;
+    height: 350px;
 
     background-color: white;
     border-radius: 5px;
@@ -62,25 +62,8 @@
     border: 1px solid rgb(62, 62, 62);
 }
 
-.more_action {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-    color: gray;
-    font-size: 13px;
-    padding: 0 15px;
-}
-
-#find_id,
-#find_pw {
-    padding-right: 13px;
-    border-right: 1px solid gray;
-}
-
-#find_id:hover,
-#find_pw:hover,
-#signup_btn:hover {
-    color: rgb(65, 62, 62);
+#login_btn {
+    margin-top: 10px;
 }
 
 .login_modal.on {
