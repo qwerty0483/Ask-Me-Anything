@@ -77,25 +77,25 @@ $result = mysqli_query($db_conn, $sql);
             <?php
             if ($page > 1) {
                 $page--;
-                echo "<a href=\"question_list.php?page=1\" class=\"page_str\"><i class='fa-solid fa-angles-left' style='margin-right: 10px;'></i></a>";
-                echo "<a href=\"question_list.php?page=$page\" class=\"page_str\"><i class='fa-solid fa-angle-left' style='margin-right: 10px;'></i></a>";
-                $page = 2;
+                echo "<a href=\"question_list.php?page=1\"><i class='fa-solid fa-angles-left' style='margin-right: 10px;'></i></a>";
+                echo "<a href=\"question_list.php?page=$page\"><i class='fa-solid fa-angle-left' style='margin-right: 10px;'></i></a>";
+                $page++;
             }
             $totalPage = ceil($row / $pagePer);
             $pageNum = 1;
 
             while ($pageNum <= $totalPage) {
                 if ($page == $pageNum)
-                    echo "<a href=\"question_list.php?page=$pageNum\" id=\"cur_page\" class=\"page_num\">$pageNum</a>";
+                    echo "<a href=\"question_list.php?page=$pageNum\">$pageNum</a>";
                 else
-                    echo "<a href=\"question_list.php?page=$pageNum\" class=\"page_num\">$pageNum</a>";
+                    echo "<a href=\"question_list.php?page=$pageNum\">$pageNum</a>";
                 $pageNum++;
                 echo "<span style='margin-right: 10px;'></span>";
             }
             if ($page < $totalPage) {
                 $page++;
-                echo "<a href=\"question_list.php?page=$page\"class=\"page_str\"><i class='fa-solid fa-angle-right' style='margin-right: 10px'></i></a>";
-                echo "<a href=\"question_list.php?page=$totalPage\" class=\"page_str\"><i class='fa-solid fa-angles-right' style='margin-right: 10px'></i></a>";
+                echo "<a href=\"question_list.php?page=$page\"><i class='fa-solid fa-angle-right' style='margin-right: 10px'></i></a>";
+                echo "<a href=\"question_list.php?page=$totalPage\"><i class='fa-solid fa-angles-right' style='margin-right: 10px'></i></a>";
             }
             ?>
         </div>

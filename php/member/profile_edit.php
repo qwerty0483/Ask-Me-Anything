@@ -12,7 +12,6 @@ $id = $_SESSION['userId'];
 $nickname = mysqli_real_escape_string($db_conn, $_POST['userNickname']);
 $email =  mysqli_real_escape_string($db_conn, $_POST['userEmail']);
 
-// Validate email if provided
 if ($email) {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo "
@@ -27,7 +26,6 @@ if ($email) {
     }
 }
 
-// Check if nickname is already in use
 if ($nickname) {
     $sql = "SELECT user_nickname FROM user_info";
     $result = $db_conn->query($sql);

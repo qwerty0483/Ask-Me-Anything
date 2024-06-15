@@ -8,6 +8,7 @@ if (!isset($_SESSION['userId'])) {
             </script>
 	";
 }
+
 $db_conn = mysqli_connect('localhost', 'root', '', 'board') or die('Unable to connect. Check your connection parameters.');
 
 $idx = $_GET['idx'];
@@ -16,6 +17,7 @@ $sql = "select * from question_list where boardIdx = '$idx';";
 $rst = mysqli_query($db_conn, $sql);
 $bdArr = mysqli_fetch_array($rst);
 $formattedDate = date('Y-m-d H:i', strtotime($bdArr['boardDate']));
+
 
 $userId = $_SESSION['userId'];
 
@@ -28,6 +30,17 @@ $scrapSql = "SELECT boardScrap FROM question_scrap WHERE boardIdx = '$idx' AND u
 $scrapResult = mysqli_query($db_conn, $scrapSql);
 $scrapStatus = mysqli_fetch_array($scrapResult);
 $scrapIcon = ($scrapStatus && $scrapStatus['boardScrap'] == 1) ? "fa-solid" : "fa-regular";
+
+$is_count = false;
+if (!isset($_COOKIE["board_{$idx}"])) {
+    setcookie("board_{$idx}", $idx, time() + 10);
+    $is_count = true;
+}
+
+if ($is_count) {
+    $updateViewsSQL = "UPDATE question_list SET boardViews = boardViews + 1 WHERE boardIdx = '$idx';";
+    mysqli_query($db_conn, $updateViewsSQL);
+}
 ?>
 
 <!DOCTYPE html>
