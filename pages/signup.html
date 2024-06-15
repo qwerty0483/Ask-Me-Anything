@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<link rel="shortcut icon" href="#">
+
+<body>
+    <div class="signup">
+        <form action="/php/member/regist_proc.php" method="POST" class="form">
+            <div id="logo">
+                <a href="/index.php"><img src="/assets/logo.png"></a>
+            </div>
+            <div>
+                <span>아이디</span>
+                <input type="text" name="userId" id="user_id">
+                <input type="button" value="중복확인" id="check_id_btn" onclick="checkId()">
+                <div id="id_existence">
+                    <i class="fa-solid fa-xmark"></i> 이미 존재하는 아이디입니다.
+                </div>
+                <div id="id_available">
+                    <i class="fa-solid fa-check"></i> 사용 가능한 아이디입니다.
+                </div>
+                <div id="id_check">
+                    <i class="fa-solid fa-xmark"></i> 아이디 중복 확인해주세요.
+                </div>
+            </div>
+            <div>
+                <span>비밀번호</span>
+                <input type="password" name="userPw" id="user_pw">
+                <ul class="pw_validator">
+                    <li id="condition1">
+                        <i class="fa-solid fa-xmark"></i> 영문/숫자/특수문자 각각 한 개 이상 포함
+                    </li>
+                    <li id="condition2">
+                        <i class="fa-solid fa-xmark"></i> 8자 이상 30자 이하 입력 (공백 제외)
+                    </li>
+                    <li id="condition3">
+                        <i class="fa-solid fa-xmark"></i> 연속 3자 이상 동일한 문자/숫자 제외
+                </ul>
+            </div>
+            <div>
+                <span>비밀번호 확인</span>
+                <input type="password" name="userPwCheck" id="pw_check">
+                <div id="pw_noSame">
+                    <i class="fa-solid fa-xmark"></i> 비밀번호가 일치하지 않습니다.
+                </div>
+            </div>
+            <div>
+                <span>이메일</span>
+                <input type="text" name="userEmail" id="user_email">
+                <div id="email_existence">
+                    <i class="fa-solid fa-xmark"></i> 이미 가입된 이메일입니다.
+                </div>
+                <div id="email_validator">
+                    <i class="fa-solid fa-xmark"></i> 유효하지 않은 이메일입니다.
+                </div>
+            </div>
+            <div id="signup_btn">가입하기</div>
+        </form>
+    </div>
+
+    <script src="/js/signup.js"></script>
+</body>
+
+</html>

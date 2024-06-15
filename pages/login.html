@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <div class="login_modal">
+        <div class="login_container">
+            <div id="logo">
+                <img src="/assets/logo.png">
+            </div>
+            <div id="closeBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <form action="/php/member/login_proc.php" method="POST" class="form" onsubmit="return login_check()">
+                <input type="text" name="userId" id="user_id" placeholder="아이디를 입력하세요.">
+                <input type="password" name="userPw" id="user_pw" placeholder="비밀번호를 입력하세요.">
+                <input type="submit" value="로그인" id="login_btn">
+            </form>
+            <div class="more_action">
+                <div id="find_id"><a href="/">아이디 찾기</a></div>
+                <div id="find_pw"><a href="/">비밀번호 찾기</a></div>
+                <div id="signup_btn"><a href="/pages/signup.html">회원가입</a></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function login_check() {
+            var userId = document.getElementById("user_id");
+            var userPw = document.getElementById("user_pw");
+            let flag = 0;
+
+            if (userId.value == '') {
+                userId.style.border = '1px solid red';
+                flag = 1;
+            }
+            else {
+                userId.style.border = '1px solid gray';
+            }
+            if (userPw.value == '') {
+                userPw.style.border = '1px solid red';
+                flag = 1;
+            }
+            else {
+                userPw.style.border = '1px solid gray';
+            }
+
+            if (flag == 1) {
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

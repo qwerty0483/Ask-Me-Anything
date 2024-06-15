@@ -1,0 +1,91 @@
+@media only screen and (max-width: 400px) {
+    .signup {
+        max-width: 400px !important;
+    }
+}
+
+.signup {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    margin: 10px 0;
+    padding: 20px;
+    width: 360px;
+}
+
+form>div {
+    margin: 20px 0;
+}
+
+#logo {
+    width: 300px;
+    height: 100px;
+    text-align: center;
+    margin-left: 11px;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+span {
+    display: block;
+    font-size: 18px;
+}
+
+form input {
+    outline: none;
+    border: 1px solid gray;
+    margin: 7px 0;
+    padding: 5px;
+    font-size: 15px;
+    width: 100%;
+    border-radius: 3px;
+}
+
+#user_id {
+    width: 75% !important;
+}
+
+#check_id_btn {
+    width: 23% !important;
+}
+
+form input:focus {
+    border: 1px solid rgb(62, 62, 62);
+}
+
+#id_existence,
+#id_check,
+#pw_noSame,
+#email_existence,
+#email_validator {
+    display: none;
+    color: red;
+}
+
+#id_available {
+    display: none;
+    color: green;
+}
+
+.pw_validator {
+    color: red;
+}
+
+#signup_btn {
+    border: 1px solid rgb(98, 98, 98);
+    background-color: rgb(238, 236, 236);
+    margin: 7px 0;
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
+    font-size: 18px !important;
+    text-align: center;
+    cursor: pointer;
+}
